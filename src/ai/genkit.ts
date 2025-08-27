@@ -9,8 +9,10 @@ if (!process.env.GOOGLE_API_KEY) {
 }
 
 export const ai = genkit({
-  plugins: [googleAI()],
+  plugins: [googleAI(
+    { apiKey: process.env.GOOGLE_API_KEY }
+  )],
   // Updated to a valid and current model.
   // Ensure GOOGLE_API_KEY is set in your environment variables.
-  model: 'googleai/gemini-2.5-flash-preview-04-17', 
+  model: 'googleai/gemini-2.5-flash-lite',
 });
